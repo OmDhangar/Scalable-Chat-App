@@ -19,9 +19,20 @@ export const SocketContextProvider = ({ children }) => {
 				query: {
 					userId: authUser._id,
 				},
+				reconnection: true,        // Enable reconnection
+                reconnectionAttempts: 5,   // Try to reconnect 5 times
+                reconnectionDelay: 1000    // Wait 1 second between attempts
 			});
 
 			setSocket(socket);
+			socket.on("connect", () => {
+                console.log("Connected to Socket.IO server");
+            });
+
+            socket.on("connect_error", () => {
+                console.log("Connection error, attempting to reconnect...");
+            });
+
 
 			// socket.on() is used to listen to the events. can be used both on client and server side
 			socket.on("getOnlineUsers", (users) => {

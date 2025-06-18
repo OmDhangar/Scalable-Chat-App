@@ -15,8 +15,8 @@ const Login = () => {
 
 	return (
 		<div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-			<div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-				<h1 className='text-3xl font-semibold text-center text-gray-300'>
+			<div className='w-full p-6 rounded-lg shadow-md bg-gray-800 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20'>
+				<h1 className='text-3xl font-semibold text-center text-white'>
 					Login
 					<span className='text-blue-500'> ChatApp</span>
 				</h1>
@@ -24,7 +24,7 @@ const Login = () => {
 				<form onSubmit={handleSubmit}>
 					<div>
 						<label className='label p-2'>
-							<span className='text-base label-text'>Username</span>
+							<span className='text-white label-text'>Username</span>
 						</label>
 						<input
 							type='text'
@@ -37,7 +37,7 @@ const Login = () => {
 
 					<div>
 						<label className='label'>
-							<span className='text-base label-text'>Password</span>
+							<span className='text-white label-text'>Password</span>
 						</label>
 						<input
 							type='password'
@@ -52,7 +52,7 @@ const Login = () => {
 					</Link>
 
 					<div>
-						<button className='btn btn-block btn-sm mt-2' disabled={loading}>
+						<button className='btn btn-block text-white btn-sm mt-2' disabled={loading}>
 							{loading ? <span className='loading loading-spinner '></span> : "Login"}
 						</button>
 					</div>
